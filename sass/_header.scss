@@ -1,0 +1,212 @@
+.header {
+  background-image: url(../images/bg-hero.png);
+  background-size: cover;
+  object-fit: contain;
+}
+.navbar {
+  background-color: $black;
+  &-items {
+    @include flex(center, space-between);
+    padding: 23px 59px 22px 61px;
+    &__menu {
+      .menu-open {
+        right: 0;
+      }
+      &--open {
+        width: 40px;
+        height: 40px;
+        display: none;
+        svg {
+          fill: white;
+          font-size: 24px;
+        }
+      }
+      &--list {
+        @include flex(center, space-between);
+        li {
+          margin-left: 48px;
+          a {
+            font-size: 14px;
+            font-weight: 600;
+            color: $gray;
+          }
+          .nav-icon {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+.hero {
+  padding: 110px 0 139px 0;
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 60px 0 61px;
+  }
+  &-content {
+    font-family: $secondary-font;
+    max-width: 513px;
+    letter-spacing: -0.1px;
+    &__image {
+      margin-bottom: 33px;
+    }
+    &__title {
+      font-weight: 300;
+      color: $white;
+      line-height: normal;
+    }
+    &__line {
+      margin: 40px 0 44px 0;
+    }
+    &__subtitle {
+      line-height: 23px;
+    }
+    &__download {
+      margin-top: 40px;
+      font-family: $primary-font;
+      color: $white;
+      font-size: 15px;
+      background: transparent;
+      border: 2px solid $white;
+      padding: 13px 30px 12px 30px;
+    }
+  }
+  &-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $white;
+    margin: 30px 0 0 191px;
+    text-align: center;
+    border-radius: 3px;
+    max-width: 362px;
+    &__title {
+      font-size: 20px;
+      font-weight: bold;
+      color: $black;
+      background-color: $white-bold;
+      padding: 18px 0 15px 0;
+      border-radius: 3px;
+      width: 100%;
+      span {
+        color: $yellow;
+      }
+    }
+    &__name,
+    &__email,
+    &__password {
+      margin: 0 37px 0 38px;
+      input {
+        font-family: $primary-font;
+        font-size: 14px;
+        border: none;
+        border-bottom: 1px solid $gray-light;
+        color: $gray-light;
+        padding: 10px 14px 9px 14px;
+        width: 100%;
+      }
+      input::placeholder {
+        color: $gray-light;
+      }
+    }
+    &__submit {
+      margin-top: 3px;
+      div {
+        padding: 21px 0 20px 0;
+        border: none;
+        cursor: pointer;
+        background-color: $yellow;
+        font-family: $primary-font;
+        font-weight: 600;
+        color: $white;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include maxw(1023px) {
+  .navbar-items {
+    padding: 22px 0;
+    &__menu {
+      &--open {
+        display: block;
+        cursor: pointer;
+      }
+      &--list {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: -50%;
+        width: 50%;
+        background-image: url(../images/bg-hero.png);
+        gap: 2%;
+        padding-top: 15%;
+        transition: all 0.5s;
+        .menu-close {
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          padding-bottom: 10px;
+          color: $white;
+          cursor: pointer;
+          svg {
+            font-size: 24px;
+          }
+        }
+        li {
+          border: 1px solid $white;
+          width: 90%;
+          height: 8%;
+          margin-left: 0px;
+          display: flex;
+          align-items: center;
+          a {
+            padding-left: 10%;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  .hero {
+    .hero-layout {
+      margin: 0;
+    }
+    &-form {
+      margin: 0;
+    }
+  }
+}
+@include maxw(767px) {
+  .menu-open {
+    width: 100%;
+  }
+  .hero {
+    padding: 70px 0;
+    .hero-layout {
+      @include flex(center, center);
+      flex-direction: column;
+    }
+    &-content {
+      @include flex(center, center);
+      flex-direction: column;
+      text-align: center;
+      &__line {
+        margin: 20px 0;
+      }
+    }
+    &-form {
+      margin-top: 30px;
+      width: 100%;
+      height: 360px;
+    }
+  }
+}

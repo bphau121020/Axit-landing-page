@@ -1,0 +1,42 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  max-width: 1400px;
+  margin: 0 auto;
+  color: $gray;
+  font-size: 16px;
+  font-family: $primary-font;
+  line-height: 1;
+}
+.container {
+  padding: 0 15px; //mobile spacing
+  max-width: 1252px; //padding 15 + 1150 = 1180px
+  margin: 0 auto;
+}
+.title-shared {
+  font-size: 20px;
+  font-weight: 700;
+  color: $black;
+  display: block;
+}
+.subtitle-shared {
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+}
+.large-title-shared {
+  font-size: 36px;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: block;
+}
+@media screen and (max-width: 1023px) {
+  .large-title-shared {
+    font-size: 24px;
+  }
+  .title-shared {
+    font-size: 18px;
+  }
+}
